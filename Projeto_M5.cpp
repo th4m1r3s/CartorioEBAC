@@ -3,16 +3,17 @@
 #include <locale.h>
 #include <string.h> //biblioteca responsável por cuidar das strings
 
-int registro()
+int registro()// função responsável por cadastrar os usuários no sistema
 {
+	//inicio da criação de variáveis/string(conjunto de variáveis)
 	char arquivo [40];
 	char cpf [40];
 	char nome [40];
 	char sobrenome [40];
 	char cargo [40];
-	
+	//final da criação de variáveis
 	printf("Digite o CPF a ser cadastrado: ");
-	scanf("%s", cpf);
+	scanf("%s", cpf);//%s refere-se a string (salvar uma string)
 	
 	strcpy(arquivo,cpf); // responsável por copiar os valores
 	
@@ -126,6 +127,7 @@ int main()
 	 printf("\t1-Registrar nomes\n\n");
 	 printf("\t2-Consultar nomes\n\n");
 	 printf("\t3-Deletar nomes\n\n");
+	 printf("\t4-Sair do sistema\n\n");
 	 printf("Opção:");
 	
 	
@@ -136,7 +138,7 @@ int main()
 	 switch(opcao)//inicio da seleção
 	 {
 	 	case 1:
-	 	registro();
+	 	registro();//chamada de funções
 		break;
 		
 		case 2:
@@ -145,6 +147,11 @@ int main()
 		
 		case 3:
 		deletar();
+		break;
+		
+		case 4:
+		printf("Obrigada por utilizar o sistema!\n");
+		return 0;
 		break;
 		
 		default:
